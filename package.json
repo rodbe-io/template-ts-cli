@@ -1,7 +1,7 @@
 {
   "author": "RBX_AUTHOR",
   "bin": {
-    "RBX_COMMAND": "./dist/index.js"
+    "RBX_COMMAND": "./dist/commands/RBX_COMMAND.js"
   },
   "bugs": {
     "url": "RBX_HTTPS_REPOSITORY/issues"
@@ -42,11 +42,6 @@
     "pnpm": ">= 9.15.2"
   },
   "enginesStrict": true,
-  "exports": {
-    ".": {
-      "import": "./dist/index.js"
-    }
-  },
   "files": [
     "dist"
   ],
@@ -56,7 +51,6 @@
     "front-end"
   ],
   "license": "MIT",
-  "main": "./dist/index.js",
   "name": "RBX_PROJECT_NAME",
   "packageManager": "pnpm@9.15.2",
   "publishConfig": {

@@ -3,8 +3,9 @@ export default {
   branches: [
     '+([0-9])?(.{+([0-9]),x}).x',
     'main',
-    'next',
+    'master',
     'next-major',
+    'next',
     {
       name: 'beta',
       prerelease: true,
@@ -28,8 +29,7 @@ export default {
         },
         preset: 'conventionalcommits',
         presetConfig: {
-          changelogHeader:
-            '# Hi\n\n bais hi lorem ipsum ![Insomnia API Client](https://raw.githubusercontent.com/Kong/insomnia/develop/screenshots/main.png)',
+          changelogHeader: '#RBX_PROJECT_NAME',
           compareUrlFormat: '{{host}}/{{owner}}/{{repository}}/compare/{{previousTag}}...{{currentTag}}',
           issuePrefixes: ['#'],
           issueUrlFormat: '{{host}}/{{owner}}/{{repository}}/bug/{{id}}',
