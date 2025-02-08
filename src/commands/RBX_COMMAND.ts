@@ -4,6 +4,8 @@ import { initEvents } from '@/events';
 
 initEvents();
 
-export const init = () => {
+export const init = async () => {
   console.log('init RBX command');
 };
+
+await init();
