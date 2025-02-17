@@ -11,7 +11,9 @@
   "bugs": {
     "url": "RBX_HTTPS_REPOSITORY/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@rodbe/check-updates": "^1.3.0"
+  },
   "description": "RBX_DESCRIPTION",
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
