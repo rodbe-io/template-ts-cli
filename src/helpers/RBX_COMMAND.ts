@@ -1,6 +1,7 @@
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readFileSync } from 'node:fs';
+
 import type pkgJson from '../../package.json';
 
 type PkgJson = typeof pkgJson;
