@@ -1,4 +1,4 @@
-import { dirname, join } from 'node:path';
+import { dirname, join, parse } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readFileSync } from 'node:fs';
 
@@ -12,6 +12,24 @@ export const getDistPath = () => {
   return dirname(filename);
 };
 
-export const getPkgJsonPath = () => join(getDistPath(), '..', '..', 'package.json');
+export const getMainPkgJsonPath = () => {
+  let currentFolderPath = getDistPath();
+  let pkgJsonPath = '';
 
-export const readPkgJson = () => JSON.parse(readFileSync(getPkgJsonPath(), 'utf8')) as PkgJson;
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  while (true) {
+    const { base, dir } = parse(currentFolderPath);
+
+    if (base === 'dist') {
+      pkgJsonPath = dir;
+      break;
+    }
+
+    currentFolderPath = join(currentFolderPath, '..');
+  }
+
+  return join(pkgJsonPath, 'package.json');
+};
+
+export const readMainPkgJson = () =>
+  JSON.parse(readFileSync(getMainPkgJsonPath(), 'utf8')) as PkgJson;
