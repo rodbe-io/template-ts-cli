@@ -25,16 +25,18 @@
     "dist"
   ],
   "scripts": {
-    "prebuild": "pnpm run type-check",
+    "prebuild": "pnpm run ts:check",
     "build": "pkgroll",
     "commit": "git-cz",
     "commitlint": "commitlint --edit",
+    "eslint:config": "eslint --print-config eslint.config.js",
     "eslint:fix": "eslint --fix",
     "prepare": "husky || true",
     "release": "semantic-release",
     "start": "pkgroll --watch",
     "test:unit": "vitest run",
-    "type-check": "tsc --noEmit"
+    "ts:check": "tsc --noEmit",
+    "ts:config": "tsc --showConfig"
   },
   "config": {
     "commitizen": {
